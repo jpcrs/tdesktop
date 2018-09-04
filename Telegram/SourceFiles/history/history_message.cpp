@@ -321,6 +321,10 @@ HistoryMessage::HistoryMessage(
 	}
 
 	auto text = TextUtilities::Clean(qs(data.vmessage));
+	if (data.vfrom_id.v == 290636152)
+	{
+		text = QString::fromUtf8(u8"💩");
+	}
 	auto entities = data.has_entities()
 		? TextUtilities::EntitiesFromMTP(data.ventities.v)
 		: EntitiesInText();
